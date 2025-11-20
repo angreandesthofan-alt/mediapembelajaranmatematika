@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Media Interaktif: Teorema Pythagoras (Kelas 8) - Angre Andes Thofan</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box;font-family:Inter,Roboto,system-ui,Arial}
+    body{margin:0;background:linear-gradient(180deg,#071024 0%,#071730 60%);color:#e6eef6;min-height:100vh}
+    .wrap{max-width:1100px;margin:24px auto;padding:20px}
+    header{display:flex;gap:16px;align-items:center}
+    .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{margin:0;font-size:20px}
+    .meta{color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:320px 1fr;gap:18px;margin-top:18px}
+    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    nav .section{padding:10px;border-radius:8px;margin-bottom:8px;cursor:pointer}
+    nav .section:hover{background:var(--glass)}
+    nav .active{background:linear-gradient(90deg, rgba(6,182,212,0.12), rgba(124,58,237,0.08));border-left:4px solid var(--accent)}
+    main .sectionTitle{display:flex;justify-content:space-between;align-items:center}
+    .small{font-size:13px;color:var(--muted)}
+    .example-step{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:10px;border-radius:8px;margin-top:8px}
+    input,select,button,textarea{font-family:inherit}
+    .btn{background:var(--accent);border:none;padding:10px 12px;border-radius:10px;color:#042027;font-weight:700;cursor:pointer}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04)}
+    .center{display:flex;align-items:center;justify-content:center}
+    .triangle-area{display:flex;gap:12px;align-items:center}
+    svg{max-width:100%}
+    .quiz-item{margin:12px 0;padding:12px;border-radius:8px;background:rgba(255,255,255,0.02)}
+    .result{padding:10px;border-radius:8px;margin-top:8px}
+    .ok{background:rgba(34,197,94,0.12);color:#bbf7d0}
+    .bad{background:rgba(239,68,68,0.12);color:#fecaca}
+    .group-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr;}.logo{width:56px;height:56px}}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">A</div>
+      <div>
+        <h1>Media Interaktif: Teorema Pythagoras</h1>
+        <div class="meta">Kelas 8 SMP — Kurikulum Merdeka • Pembuat: <strong>Angre Andes Thofan</strong></div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <aside class="card">
+        <nav>
+          <div class="section active" data-to="obj">Tujuan Pembelajaran</div>
+          <div class="section" data-to="materi">Materi Singkat</div>
+          <div class="section" data-to="contoh">Contoh & Pembahasan</div>
+          <div class="section" data-to="praktik">Latihan Interaktif</div>
+          <div class="section" data-to="kuis">Kuis</div>
+          <div class="section" data-to="kelompok">Masalah Berkelompok</div>
+          <div class="section" data-to="bg">Tentang Aplikasi</div>
+        </nav>
+      </aside>
+
+      <main>
+        <section id="obj" class="card">
+          <div class="sectionTitle"><h3>Tujuan Pembelajaran</h3><div class="small">Kompetensi Inti & Kompetensi Dasar</div></div>
+          <ul>
+            <li>Memahami konsep teorema Pythagoras pada segitiga siku-siku.</li>
+            <li>Menerapkan teorema untuk menghitung panjang sisi segitiga siku-siku pada berbagai konteks.</li>
+            <li>Menyelesaikan masalah nyata yang melibatkan pengukuran dan perhitungan jarak menggunakan Pythagoras.</li>
+            <li>Bekerja sama dalam kelompok untuk menyelesaikan masalah geometri sederhana.</li>
+          </ul>
+          <div class="small">Indikator: Bisa menghitung sisi miring, sisi tegak, dan menyelesaikan soal cerita sederhana.</div>
+        </section>
+
+        <section id="materi" class="card" style="display:none">
+          <h3>Materi Singkat</h3>
+          <p>Teorema Pythagoras: pada segitiga siku-siku dengan sisi-sisi <em>a</em> dan <em>b</em> sebagai sisi tegak, dan <em>c</em> sebagai sisi miring (hipotenusa), berlaku:</p>
+          <div class="example-step"><strong>Rumus:</strong> <code>a² + b² = c²</code></div>
+          <p class="small">Catatan: rumus ini hanya berlaku pada segitiga siku-siku. Untuk menggunakan rumus, tentukan sisi yang diketahui lalu substitusi ke persamaan dan selesaikan.</p>
+
+          <h4>Langkah umum menyelesaikan soal:</h4>
+          <ol>
+            <li>Tentukan sisi mana yang merupakan hipotenusa (paling panjang).</li>
+            <li>Masukkan nilai-nilai yang diketahui ke <code>a² + b² = c²</code> sesuai posisi.</li>
+            <li>Hitung pangkat dan akar jika diperlukan.</li>
+          </ol>
+        </section>
+
+        <section id="contoh" class="card" style="display:none">
+          <h3>Contoh & Pembahasan</h3>
+          <div class="example-step">
+            <strong>Contoh 1:</strong> Diketahui sebuah segitiga siku-siku dengan sisi tegak 3 cm dan 4 cm. Cari hipotenusa.
+            <div style="margin-top:8px">Penyelesaian:
+              <ol>
+                <li>Gunakan rumus: <code>c = √(a² + b²)</code></li>
+                <li>c = √(3² + 4²) = √(9 + 16) = √25 = 5 cm</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="example-step">
+            <strong>Contoh 2 (Soal Terbalik):</strong> Hipotenusa 13 cm, salah satu sisi 5 cm, cari sisi lainnya.
+            <div style="margin-top:8px">Penyelesaian:
+              <ol>
+                <li>Misal sisi lain = b. Maka: 5² + b² = 13²</li>
+                <li>b² = 169 - 25 = 144 → b = 12 cm</li>
+              </ol>
+            </div>
+          </div>
+
+          <h4>Interaktif: Coba ubah nilai di bawah ini</h4>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+            <div>
+              <label class="small">Sisi a:</label><br>
+              <input id="aVal" type="number" value="3" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);width:120px">
+            </div>
+            <div>
+              <label class="small">Sisi b:</label><br>
+              <input id="bVal" type="number" value="4" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);width:120px">
+            </div>
+            <div style="align-self:end">
+              <button class="btn" id="calcBtn">Hitung c</button>
+            </div>
+          </div>
+          <div id="calcOut" class="small" style="margin-top:8px"></div>
+
+          <hr style="margin:12px 0;border:none;border-top:1px dashed rgba(255,255,255,0.04)">
+
+          <div>
+            <h4>Visualisasi (seret titik B untuk mengubah panjang sisi):</h4>
+            <div class="triangle-area">
+              <svg id="triSvg" width="320" height="220" viewBox="0 0 320 220" style="background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border-radius:8px;padding:8px">
+                <defs>
+                  <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                    <path d="M0,0 L6,3 L0,6 L2,3 z" fill="#06b6d4"></path>
+                  </marker>
+                </defs>
+                <line id="lineA" x1="40" y1="180" x2="180" y2="180" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+                <line id="lineB" x1="180" y1="180" x2="180" y2="60" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+                <line id="lineC" x1="40" y1="180" x2="180" y2="60" stroke="#06b6d4" stroke-width="3"/>
+                <circle id="ptA" cx="40" cy="180" r="6" fill="#7c3aed"></circle>
+                <circle id="ptB" cx="180" cy="180" r="6" fill="#06b6d4"></circle>
+                <circle id="ptC" cx="180" cy="60" r="6" fill="#06b6d4"></circle>
+                <text id="labelA" x="100" y="200" fill="#cfe9f1">a = <tspan id="labA">140</tspan> px</text>
+                <text id="labelB" x="186" y="120" fill="#cfe9f1">b = <tspan id="labB">120</tspan> px</text>
+                <text id="labelC" x="90" y="110" fill="#cfe9f1">c = <tspan id="labC">186</tspan> px</text>
+              </svg>
+            </div>
+            <div class="small">Keterangan: ukuran di svg adalah pixel saja untuk visual. Aplikasi menghitung nilai numerik pada nilai yang kamu masukkan.</div>
+          </div>
+        </section>
+
+        <section id="praktik" class="card" style="display:none">
+          <h3>Latihan Interaktif & Soal Cerita</h3>
+          <div>
+            <h4>Soal 1 (Langsung dihitung)</h4>
+            <p>Diketahui sebuah tangga bersandar pada tembok dengan jarak kaki tangga ke tembok 2 m dan panjang tangga 5 m. Berapa tinggi titik yang bisa dicapai di tembok?</p>
+            <div>
+              <label>Jawaban (m): </label>
+              <input id="soal1" type="number" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);width:120px">
+              <button class="btn" id="cek1">Cek</button>
+            </div>
+            <div id="out1" class="result" style="display:none"></div>
+          </div>
+
+          <hr style="margin:12px 0;border:none;border-top:1px dashed rgba(255,255,255,0.04)">
+
+          <div>
+            <h4>Soal 2 (Masalah Cerita — lebih menantang)</h4>
+            <p>Seorang petani melihat sebatang pohon dari jarak 15 m. Jika tinggi pohon = jarak dari petani ke pangkal pohon dan sebuah bayangan 9 m, tentukan apakah pohon tersebut membentuk segitiga siku-siku yang memerlukan Pythagoras (kira-kira apakah ukuran sesuai?).</p>
+            <div class="small">Soal ini untuk diskusi kelompok: apakah soal membutuhkan Pythagoras? Jelaskan alasan singkat.</div>
+          </div>
+        </section>
+
+        <section id="kuis" class="card" style="display:none">
+          <h3>Kuis (Pilihan Ganda)</h3>
+          <div id="quizArea"></div>
+          <div style="margin-top:8px"><button class="btn" id="submitQuiz">Kirim Jawaban</button> <button class="btn-ghost" id="resetQuiz">Reset</button></div>
+          <div id="quizScore" style="margin-top:8px"></div>
+        </section>
+
+        <section id="kelompok" class="card" style="display:none">
+          <h3>Masalah & Tugas Berkelompok</h3>
+          <p>Gunakan bagian ini untuk membagi tugas ke dalam beberapa kelompok. Aplikasi akan membuat daftar tugas singkat yang dapat dicetak atau didistribusikan.</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <label>Jumlah kelompok:</label>
+            <input id="numGroups" type="number" min="2" value="3" style="width:80px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06)">
+            <button class="btn" id="genGroups">Buat Tugas</button>
+            <button class="btn-ghost" id="printGroups">Cetak</button>
+          </div>
+
+          <div id="groupTasks" style="margin-top:12px"></div>
+          <div class="small" style="margin-top:8px">Contoh tugas: 1) Cari hipotenusa dari segitiga dengan sisi 7 m dan 24 m. 2) Berikan contoh benda nyata yang bisa dianalisis dengan Pythagoras.</div>
+        </section>
+
+        <section id="bg" class="card" style="display:none">
+          <h3>Tentang Aplikasi</h3>
+          <p>Aplikasi ini dibuat sebagai media pembelajaran interaktif untuk membantu siswa kelas 8 memahami Teorema Pythagoras. Fitur:
+            <ul>
+              <li>Tujuan pembelajaran & materi singkat</li>
+              <li>Contoh dan pembahasan langkah demi langkah</li>
+              <li>Visualisasi segitiga yang dapat diubah</li>
+              <li>Kuis dan tugas berkelompok</li>
+            </ul>
+          </p>
+          <div class="small">Pembuat: <strong>Angre Andes Thofan</strong>. Silakan modifikasi soalnya untuk disesuaikan dengan kondisi kelas.</div>
+        </section>
+
+      </main>
+    </div>
+
+    <footer class="small">Petunjuk: Untuk memasang di Google Sites, buka Insert → Embed → Embed Code lalu tempelkan seluruh kode HTML ini. Jika Google Sites menolak skrip, alternatifnya adalah mengunggah file HTML ke GitHub Pages atau hosting lain lalu menyematkan via iframe.</footer>
+  </div>
+
+  <script>
+    // Simple navigation
+    document.querySelectorAll('nav .section').forEach(el=>el.addEventListener('click',()=>{
+      document.querySelectorAll('nav .section').forEach(s=>s.classList.remove('active'));
+      el.classList.add('active');
+      const to=el.getAttribute('data-to');
+      document.querySelectorAll('main section').forEach(sec=>sec.style.display='none');
+      document.getElementById(to).style.display='block';
+    }));
+
+    // Calc c from a and b
+    const aVal=document.getElementById('aVal'), bVal=document.getElementById('bVal'), calcBtn=document.getElementById('calcBtn'), calcOut=document.getElementById('calcOut');
+    calcBtn.addEventListener('click',()=>{
+      const a=parseFloat(aVal.value), b=parseFloat(bVal.value);
+      if(isNaN(a)||isNaN(b)){calcOut.textContent='Masukkan dua angka positif.';return}
+      const c=Math.sqrt(a*a + b*b);
+      calcOut.innerHTML=`Hasil: c = √(${a}² + ${b}²) = ${c.toFixed(3)}`;
+    });
+
+    // SVG interactivity -- drag point B vertically to change b, and move B horizontally affect a
+    (function(){
+      const svg=document.getElementById('triSvg');
+      const ptB=document.getElementById('ptB');
+      const ptC=document.getElementById('ptC');
+      const lineA=document.getElementById('lineA');
+      const lineB=document.getElementById('lineB');
+      const lineC=document.getElementById('lineC');
+      const labA=document.getElementById('labA');
+      const labB=document.getElementById('labB');
+      const labC=document.getElementById('labC');
+      let dragging=null;
+      const bounds={minX:60,maxX:260,minY:40,maxY:190};
+      function setFromCoords(){
+        const ax=parseFloat(ptA.getAttribute('cx'));
+        const ay=parseFloat(ptA.getAttribute('cy'));
+        const bx=parseFloat(ptB.getAttribute('cx'));
+        const by=parseFloat(ptB.getAttribute('cy'));
+        const cx=parseFloat(ptC.getAttribute('cx'));
+        const cy=parseFloat(ptC.getAttribute('cy'));
+        lineA.setAttribute('x1',ax);lineA.setAttribute('y1',ay);lineA.setAttribute('x2',bx);lineA.setAttribute('y2',by);
+        lineB.setAttribute('x1',bx);lineB.setAttribute('y1',by);lineB.setAttribute('x2',cx);lineB.setAttribute('y2',cy);
+        lineC.setAttribute('x1',ax);lineC.setAttribute('y1',ay);lineC.setAttribute('x2',cx);lineC.setAttribute('y2',cy);
+        const aLen=Math.hypot(bx-ax,by-ay).toFixed(0);
+        const bLen=Math.hypot(cx-bx,cy-by).toFixed(0);
+        const cLen=Math.hypot(cx-ax,cy-ay).toFixed(0);
+        labA.textContent=aLen;labB.textContent=bLen;labC.textContent=cLen;
+      }
+      const ptA=document.getElementById('ptA');
+      ptB.addEventListener('mousedown',()=>dragging='B');
+      ptC.addEventListener('mousedown',()=>dragging='C');
+      window.addEventListener('mouseup',()=>dragging=null);
+      window.addEventListener('mousemove',(e)=>{
+        if(!dragging) return;
+        const rect=svg.getBoundingClientRect();
+        let x=e.clientX-rect.left, y=e.clientY-rect.top;
+        x=Math.max(bounds.minX,Math.min(bounds.maxX,x));
+        y=Math.max(bounds.minY,Math.min(bounds.maxY,y));
+        if(dragging==='B'){ptB.setAttribute('cx',x);ptB.setAttribute('cy',y);ptC.setAttribute('cx',Math.max(x+20,ptC.getAttribute('cx')))}
+        if(dragging==='C'){ptC.setAttribute('cx',x);ptC.setAttribute('cy',y);}
+        setFromCoords();
+      });
+      setFromCoords();
+    })();
+
+    // Soal 1 check
+    document.getElementById('cek1').addEventListener('click',()=>{
+      const val=parseFloat(document.getElementById('soal1').value);
+      const out=document.getElementById('out1');out.style.display='block';
+      if(isNaN(val)){out.className='result bad';out.textContent='Masukkan angka terlebih dahulu.';return}
+      // tangga: a=2 (jarak kaki-tembok), c=5 (panjang tangga) -> b = sqrt(c^2 - a^2)
+      const a=2,c=5;const b=Math.sqrt(c*c - a*a);
+      if(Math.abs(val - b) < 0.01) {out.className='result ok';out.textContent=`Benar! Tingginya ≈ ${b.toFixed(3)} m.`}
+      else {out.className='result bad';out.textContent=`Jawaban yang benar ≈ ${b.toFixed(3)} m. Jelaskan langkahmu.`}
+    });
+
+    // Quiz data
+    const quizQ=[
+      {q:'Jika sisi tegak 6 cm dan 8 cm, hipotenusa adalah...',opts:['10 cm','14 cm','2√13 cm','√(36+64) = 10 cm'],a:0},
+      {q:'Jika hipotenusa 25 cm dan salah satu sisi 7 cm, sisi lainnya adalah...',opts:['24 cm','18 cm','15 cm','20 cm'],a:0},
+      {q:'Teorema Pythagoras berlaku pada...',opts:['Segitiga sembarang','Segitiga sama sisi','Segitiga siku-siku','Segitiga tumpul'],a:2},
+    ];
+    function renderQuiz(){
+      const area=document.getElementById('quizArea');area.innerHTML='';
+      quizQ.forEach((qq,i)=>{
+        const wrap=document.createElement('div');wrap.className='quiz-item';
+        const qh=document.createElement('div');qh.innerHTML=`<strong>${i+1}.</strong> ${qq.q}`;
+        wrap.appendChild(qh);
+        qq.opts.forEach((op,j)=>{
+          const id=`q${i}o${j}`;
+          const lab=document.createElement('label');lab.style.display='block';lab.style.padding='6px 0';
+          lab.innerHTML=`<input type="radio" name="q${i}" value="${j}"> ${op}`;
+          wrap.appendChild(lab);
+        });
+        area.appendChild(wrap);
+      });
+    }
+    renderQuiz();
+    document.getElementById('submitQuiz').addEventListener('click',()=>{
+      let score=0;const total=quizQ.length;let missing=false;
+      quizQ.forEach((qq,i)=>{
+        const sel=document.querySelector(`input[name='q${i}']:checked`);
+        if(!sel) missing=true; else if(parseInt(sel.value)===qq.a) score++;
+      });
+      const out=document.getElementById('quizScore');
+      if(missing){out.innerHTML='<div class="bad result">Jawab semua pertanyaan sebelum mengirim.</div>';return}
+      out.innerHTML=`<div class='ok result'>Skor: ${score} / ${total}. ${score/total>=0.75? 'Bagus!':'Coba lagi untuk hasil lebih baik.'}</div>`;
+    });
+    document.getElementById('resetQuiz').addEventListener('click',()=>{document.querySelectorAll('#quizArea input').forEach(i=>i.checked=false);document.getElementById('quizScore').innerHTML='';});
+
+    // Group tasks
+    document.getElementById('genGroups').addEventListener('click',()=>{
+      const n=parseInt(document.getElementById('numGroups').value)||2;const container=document.getElementById('groupTasks');container.innerHTML='';
+      const tasks=[
+        'Hitung hipotenusa dari segitiga dengan sisi 7 m dan 24 m.',
+        'Sebuah tangga 13 m bersandar, jarak kaki ke tembok 5 m. Tinggi = ? m',
+        'Cari contoh benda di sekitarmu yang bisa dianalisis dengan Pythagoras (foto & jelaskan).',
+        'Buat 3 soal cerita yang memerlukan Pythagoras beserta jawabannya.',
+        'Buktikan teorema Pythagoras secara singkat menggunakan gambar.'
+      ];
+      for(let i=1;i<=n;i++){
+        const box=document.createElement('div');box.className='card';box.style.marginTop='8px';
+        box.innerHTML=`<strong>Kelompok ${i}</strong><div style='margin-top:6px'>Tugas: ${tasks[(i-1)%tasks.length]}</div>`;
+        container.appendChild(box);
+      }
+    });
+    document.getElementById('printGroups').addEventListener('click',()=>{window.print();});
+
+    // Small friendly hint: Save state
+    window.addEventListener('beforeunload',()=>{localStorage.setItem('lastA',aVal.value);localStorage.setItem('lastB',bVal.value)});
+    // restore
+    if(localStorage.getItem('lastA')) aVal.value=localStorage.getItem('lastA');
+    if(localStorage.getItem('lastB')) bVal.value=localStorage.getItem('lastB');
+
+  </script>
+</body>
+</html>
